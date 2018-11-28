@@ -92,6 +92,17 @@ func generateQuads(width: Int, height: Int, padding: Int, boundWidth: Int, bound
 }
 
 class CustomView: UIView {
+    let quads: [Quad]
+    
+    init(frame: CGRect, quads: [Quad]) {
+        self.quads = quads
+        super.init(frame: frame)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
@@ -99,17 +110,13 @@ class CustomView: UIView {
         
         ctx.saveGState()
         
-        let quads = generateQuads(width: 20, height: 20, padding: 10, boundWidth: 400, boundHeight: 400)
-        
-        for quad in quads {
+        for quad in self.quads {
             quad.draw()
         }
         
         ctx.restoreGState()
     }
     
-    // Using a function since `var image` might conflict with an existing variable
-    // (like on `UIImageView`)
     func asImage() -> UIImage {
         let renderer = UIGraphicsImageRenderer(bounds: bounds)
         return renderer.image { rendererContext in
@@ -128,7 +135,9 @@ class CustomView: UIView {
     }
 }
 
-let cv = CustomView(frame: CGRect(x: 0, y: 0, width: 400, height: 400))
+let quads = generateQuads(width: 20, height: 20, padding: 10, boundWidth: 400, boundHeight: 400)
+
+let cv = CustomView(frame: CGRect(x: 0, y: 0, width: 400, height: 400), quads:quads)
 cv.backgroundColor = UIColor(red:1.00, green:0.84, blue:0.00, alpha:1.0)
 PlaygroundPage.current.liveView = cv
 
@@ -136,8 +145,7 @@ PlaygroundPage.current.liveView = cv
 
 let pdfData = cv.asPDF()
 
-
-let url = playgroundSharedDataDirectory.appendingPathComponent("foo.pdf")
+let url = playgroundSharedDataDirectory.appendingPathComponent("ad001.pdf")
 let written = pdfData.write(to: url, atomically: true)
 
 
