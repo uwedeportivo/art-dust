@@ -21,7 +21,7 @@ Converted generative art by [kovach.me](https://www.kovach.me/posts/2018-03-07-g
 
 ## ad003
 
-[Untitled - Vera Molnár, 1985](https://collections.vam.ac.uk/item/O499339/print-molnar-vera/) by [Vera Molnár](https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r)
+[Untitled 1985](https://collections.vam.ac.uk/item/O499339/print-molnar-vera/) by [Vera Molnár](https://en.wikipedia.org/wiki/Vera_Moln%C3%A1r)
 
 ![ad003](ad003.png)
 
