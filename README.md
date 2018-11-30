@@ -1,5 +1,7 @@
 # art-dust
 
+[Why love generative art](https://www.artnome.com/news/2018/8/8/why-love-generative-art)
+
 Use Xcode playgrounds to play with generative art projects. API is UIKit (easier to find answers for on stackoverflow) and CoreGraphics.
 
 To save the images as PDF the directory 
@@ -24,6 +26,8 @@ Converted generative art by [kovach.me](https://www.kovach.me/posts/2018-03-07-g
 ![ad003](ad003.png)
 
 ## ad004
+
+My own creation from a failed experiment to recreate something else.
 
 ![ad004](ad004.png)
 
